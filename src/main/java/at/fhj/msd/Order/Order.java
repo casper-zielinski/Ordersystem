@@ -1,7 +1,8 @@
 package at.fhj.msd.Order;
 
 public class Order {
-      private int orderid = 0;
+
+      private int orderid;
       private Object customer;
       private Object[] orderItems;
 
@@ -9,7 +10,9 @@ public class Order {
       {
             this.customer = customer;
             this.orderItems = orderItems;
+            orderid = getOrderid();
       }
+
 
       public int getTotalprice()
       {
@@ -35,6 +38,12 @@ public class Order {
       {
             return (OrderItem[])this.orderItems;
       }
+
+    public final int getOrderid() {
+        return orderid++;
+    }
+
+     
 
 
 
