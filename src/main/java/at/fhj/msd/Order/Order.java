@@ -1,12 +1,14 @@
 package at.fhj.msd.Order;
 
+import java.util.ArrayList;
+
 public class Order {
 
       private int orderid;
       private Object customer;
-      private Object[] orderItems;
+      private ArrayList<OrderItem> orderItems;
 
-      public Order(Object customer, Object[] orderItems)
+      public Order(Object customer, ArrayList<OrderItem> orderItems)
       {
             this.customer = customer;
             this.orderItems = orderItems;
@@ -16,12 +18,11 @@ public class Order {
 
       public int getTotalprice()
       {
-            OrderItem[] obj = (OrderItem[])(orderItems);
             int tprice = 0;
 
-            for (int i=0; i < orderItems.length; i++)
+            for (int i=0; i < orderItems.size(); i++)
             {
-              tprice += obj[i].getTotal();     
+              tprice += orderItems.get(i).getTotal();    
             }
             return tprice;
 
@@ -34,9 +35,9 @@ public class Order {
             return (Customer)this.customer;
       }
 
-      public OrderItem[] getOrderItems()
+      public ArrayList<OrderItem> getOrderItems()
       {
-            return (OrderItem[])this.orderItems;
+            return (ArrayList<OrderItem>)this.orderItems;
       }
 
     public final int getOrderid() {
