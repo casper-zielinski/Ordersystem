@@ -15,7 +15,6 @@ public class Order {
             orderid = getOrderid();
       }
 
-
       public int getTotalprice()
       {
             int tprice = 0;
@@ -25,9 +24,6 @@ public class Order {
               tprice += orderItems.get(i).getTotal();    
             }
             return tprice;
-
-          
-
       }
 
       public Customer getCustomer()
