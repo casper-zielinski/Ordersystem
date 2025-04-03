@@ -3,7 +3,7 @@ package at.fhj.msd.Order;
 import java.util.ArrayList;
 
 public class Order {
-
+      private int currentid = 1;
       private int orderid;
       private Object customer;
       private ArrayList<OrderItem> orderItems;
@@ -12,7 +12,7 @@ public class Order {
       {
             this.customer = customer;
             this.orderItems = orderItems;
-            orderid = getOrderid();
+            orderid = ++currentid;
       }
 
       public int getTotalprice()
